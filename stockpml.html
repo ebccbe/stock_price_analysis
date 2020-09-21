@@ -1,0 +1,50 @@
+<html>
+    <body>
+        <section class="page-section" id="contact">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h3 class="page-section-heading text-center text-black">Stock Price Analysis</h3>
+                        <hr class="divider my-4" />
+                        <!-- <div class="wrap-input1 validate-input" data-validate="Company TICKER is required"> -->
+                        <form action="{{ url_for('predict')}}" method="post" enctype="multipart/form-data" target="_self"
+                            autocomplete="off">
+                            <div class="form-label-group">
+                                <input type="text" name="stock_n" class="form-control" id="stock_n" placeholder="Search"
+                                    required autofocus>
+                            </div>
+                        </form>
+                        <br>
+                        <p class="text-muted mb-5 text-center">
+                            {{company_txt}} <br>
+                            {{ticker_txt}}
+                        </p>
+                        <p class="text-muted mb-5 text-center">
+                            {{city_txt}} <br>
+                            {{country_txt}} <br>
+                            {{currency_txt}} <br>
+                            {{se_txt}} <br>
+                            {{web_txt}} <br>
+                        </p>
+                        <p class="text-muted mb-5 text-center">
+                            {{dh_txt}} <br>
+                            {{dl_txt}} <br>
+                        </p>
+                        <p class="text-muted mb-5 text-center">
+                            <!-- <h4 class="page-section-heading text-center text-black">Recent Stock Price</h4> -->
+                            <center>
+                                {{tables|safe}}
+                            </center>
+                        </p class="text-muted mb-5 text-center">
+                        <p>
+                            {{plot|safe}}
+                        </p>
+                        <p class="text-muted mb-5 text-center">
+                            {{plot2|safe}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
